@@ -1,0 +1,380 @@
+/**
+ * @file
+ * Styles are organized using the SMACSS technique. @see http://smacss.com/book/
+ *
+ * When you turn on CSS aggregation at admin/config/development/performance, all
+ * of these @include files will be combined into a single file.
+ */
+
+/* Import Sass mixins, variables, Compass modules, etc. */
+@import "init";
+
+/* HTML element (SMACSS base) rules */
+@import "normalize";
+
+/* Layout rules */
+@import "layouts/responsive";
+
+/* Component (SMACSS module) rules */
+@import "components/misc";
+// Optionally, add your own components here.
+@import "print";
+
+/* SMACSS theme rules */
+/* @import "theme-A"; */
+/* @import "theme-B"; */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $helvetica;
+  line-height: 1.2em;
+}
+
+
+a#logo {
+  display: block;
+  width: 100%;
+  img {
+    display:block;
+    margin: 0 auto;
+  }
+}
+
+#header {
+  box-shadow: 0 2px 2px #000;
+  width: 100%;
+}
+
+.breadcrumb {
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 60px;
+  text-align: left;
+  font-size: 10px;
+  font-weight: bold;
+  a, a:link, a:hover, a:active, a:visited {
+    color:#006699;
+  }
+}
+
+h3.location-locations-header {
+  display:none;
+}
+
+// Local area map on nodes
+
+div#block-views-locality-map-map-block {
+  float:right;
+  width:320px;
+  margin-left:16px;
+}
+
+div#block-views-locality-map-map-block div.view-id-locality_map {
+  background-color: beige;
+  padding: 6px 9px;
+  margin: -6px -9px 0;
+  border: 1px solid lightgrey;
+}
+
+// List of localities in a state
+
+div#block-views-states-locality-list {
+  clear:both;
+  margin-top:28px;
+}
+
+// Contact information
+
+div.contact-links {
+  margin: 16px 0;
+}
+
+aside div.contact-links {
+  padding: 8px 12px;
+  box-sizing: border-box;
+  background: none repeat scroll 0 0 #EDE8E0;
+  font-size:18px;
+  margin:16px auto;
+  width:280px;
+  text-align:center;
+  max-width:100%;
+}
+div.contact-links a {
+  font-weight:bold;
+  text-decoration:underline;
+}
+
+// Update link
+
+.bcd-update a {
+  display:inline-block; 
+  border:3px solid #00D900; 
+  border-radius:24px; 
+  line-height:24px; 
+  font-size:17px; 
+  padding: 4px 8px 4px 31px;
+  background: transparent url(../images/update-circle.png) no-repeat center left; color:#00d900; 
+}
+
+// View of states
+
+div.view-id-states.view-display-id-block_1 div.views-row div.views-field-title,
+div.view-id-states.view-display-id-block_3 div.views-row div.views-field-title {
+  float:left;
+  padding:1px 6px;
+  margin: 0px 2px;
+  font-size:10px;
+}
+
+.view-display-id-locality_list {
+  font-size: 80%;
+}
+
+
+// Seasonal schools
+
+.view-id-seasonal_schools div.location.vcard { margin-bottom:0; }
+.view-id-seasonal_schools h4 { margin: 4px 0 1px; font-size:13px; }
+.view-id-seasonal_schools div.view-gmap-key-wrapper { display:none; }
+.view-id-seasonal_schools div.views-field-tid {
+  text-align:right;
+  font-size:11px;
+  float:left; 
+}
+.view-id-seasonal_schools div.views-field-tid a {
+  display:inline-block;
+  padding: 1px 3px;
+  background: #eee;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+.view-id-seasonal_schools div.views-field-edit-node { float:right; }
+.view-id-seasonal_schools tr td { padding: 4px 9px; border: 1px dashed lightgrey; }
+.view-id-seasonal_schools .views-field-field-website-url { font-size:11px; }
+.view-id-seasonal_schools table.views-view-grid {margin-top:28px;}
+
+
+// Openlayers styles
+
+.openlayers-container, 
+.openlayers-map {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.olPopupCloseBox {
+  background: url("../images/close.png") no-repeat !important;
+}
+
+.openlayers-popup,
+.openlayers-popup a, 
+.openlayers-popup a:link, 
+.openlayers-popup a:hover, 
+.openlayers-popup a:active, 
+.openlayers-popup a:visited {
+  color:white !important; text-decoration:none;
+}
+
+
+// Legacy styles
+
+
+form#node-form label[for],
+form#user-register label[for], form#user-login label[for], form#user-pass label[for]
+{ display:block; }
+
+form#node-form .form-region-right legend,
+form#node-form .form-region-right div.description {display:none;}
+
+form#node-form fieldset.location { padding: 6px 12px; border: 1px dashed #ccc; }
+
+div.location.vcard {
+  margin-bottom:16px;
+}
+div.adr span.fn {
+  display:block;
+}
+
+ul.followwrap li {
+  list-style-type: none !important;
+  margin-bottom: 6px;
+  margin-right: 6px;
+  float:left;
+}
+
+/* Admin menu for content editors */
+div#block-menu-secondary-links li.leaf {
+  list-style-image:none;
+  list-style-type:none;
+  text-align:right;
+}
+div#block-menu-secondary-links li.leaf a {
+  color:maroon;
+  font-weight:bold;
+  text-decoration:none;
+}
+
+input#edit-search-block-form-1 {
+  clear:none;
+  display:block;
+  width:170px;
+  float:left;
+}
+div#edit-search-block-form-1-wrapper label {
+  display:block;
+  font-size:12px;
+}
+
+div#navblocks div.block {
+  clear:both;
+  margin-top:24px;
+  margin-bottom:24px;
+}
+div#content-full {
+  width: 60%;
+}
+
+div#navblocks div.block-views li.views-row{
+  background: #E8E6E0;
+  padding: 3px 8px;
+  list-style-type: none;
+  float:left;
+  width: 43.5%;
+  margin: 0 1.5% 4px 0;
+}
+table.views-view-grid {
+  width:100%;
+}
+div#navblocks div.block-views td {
+  background:#E8E6E0;
+  padding: 3px 8px;
+  border-bottom: 3px solid #F3F1EB;
+  border-left: 5px solid #F3F1EB;
+  width: 50%;
+}
+
+div.gmap-popup div.seasonal div.street-address {
+  display:none;
+}
+div.content-full div.view-gmap-key {
+  left: 24px;
+}
+
+div#navblocks div.block-views td a, div#navblocks div.block-views li.views-row a {
+    color: #006699;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#main div.col-c, #main div.col-b { width:300px; }
+#main div.col-a { width:285px; }
+#main div.col-ab { width: 585px; }
+#main div.col-bc { width:600px; }
+
+div#admin-toolbar.vertical { top: 60px; }
+
+#footer .str-content { padding-top:20px; }
+
+body.node-type-loc div#content-full, body.node-type-center div#content-full {
+  width:100%;
+}
+
+body.node-type-loc div.content-right, body.node-type-center div.content-right {
+  width:43%;
+}
+body.node-type-loc div.content-left, body.node-type-center div.content-left {
+  width:56%;
+}
+
+div.view-id-Splash img {
+  padding:18px;
+  border:2px solid lightgray;
+}
+
+body.node-type-loc div.content-full div.node, body.node-type-center div.content-full div.node {
+  float:left;
+  width:56%;
+}
+
+img.imagecache-240-width, img.imagecache-240-square {
+  float:right;
+  margin:12px;
+  border:1px solid lightgrey;
+  padding: 2px;
+}
+
+body.node-type-loc div.content-full div#block-views-bahai_center-block_1 div.node {
+  width:100%;
+  float:none;
+}
+body.node-type-loc div.content-full div#block-views-bahai_center-block_1 div.node h2 {
+  padding-bottom:8px;
+}
+body.node-type-loc div.content-full div#block-views-bahai_center-block_1 div.node img.imagecache {
+  float:left;
+  padding-right:8px;
+}
+
+#block-views-bahai_center-block_1 {
+  float:left;
+}
+
+div.content-bottom {
+  clear:left;
+}
+
+div.view-id-Splash.view-display-id-block_1 {
+  font-size: 14px;
+  line-height: 16px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: #7b5c31;
+  padding: 40px 95px;
+}
+
+.views-field-field-attribution-value {
+  text-align :right;
+  padding-right: 80px;
+  font-style: italic;
+}
+.views-field-field-attribution-value span.field-content:before {
+  content: "- ";
+}
+
+div.view-id-Splash.view-display-id-block_1 div.view-content div.views-row-first div.views-field-body:before {
+  float:left;
+  content: url(img/quote-lft.png);
+  margin-bottom: -20px;
+  position:relative;
+  top: -20px;
+  left: -10px;
+}
+
+div.view-id-Splash.view-display-id-block_1 div.view-content div.views-row-first div.views-field-body div.field-content {
+  padding: 0 12px;
+}
+
+div.view-id-Splash.view-display-id-block_1 p {
+  margin: 1em 0 .5em;
+}
+
+div#block-views-Splash-block_1 {
+  float:left;
+}
+div.view-id-Splash.view-display-id-block_2 {
+  text-align:center;
+}
+
+@media all and (min-width: 720px) and (max-width: 959px) {
+  .region-sidebar-second .block:first-child {
+    border-right: 1px solid lightgray;
+  }
+}
+
+@media all and (min-width: 960px) {
+  .region-sidebar-second .block:first-child {
+    border-right: none;
+  }
+  .region-sidebar-second {
+    border-left: 1px solid lightgray;
+  }
+}
