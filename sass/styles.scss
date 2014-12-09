@@ -28,6 +28,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: $georgia;
   line-height: 1.2em;
   color: #734142;
+  font-weight: normal;
 }
 
 .block__title {
@@ -98,7 +99,6 @@ aside div.contact-links {
   padding: 8px 12px;
   box-sizing: border-box;
   background: none repeat scroll 0 0 #EDE8E0;
-  font-size:18px;
   margin:16px auto;
   width:280px;
   text-align:center;
